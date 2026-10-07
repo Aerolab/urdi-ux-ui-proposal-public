@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@import '@shadeui/ui/styles.css';
+
+@theme inline {
+  --color-bg: var(--shadeui-bg);
+  --color-fg: var(--shadeui-fg);
+  --color-fg-muted: var(--shadeui-fg-muted);
+  --color-fg-subtle: var(--shadeui-fg-subtle);
+  --color-surface: var(--shadeui-surface);
+  --color-surface-muted: var(--shadeui-surface-muted);
+  --color-surface-hover: var(--shadeui-surface-hover);
+  --color-line: var(--shadeui-border);
+  --color-line-strong: var(--shadeui-border-strong);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--shadeui-font-sans);
+  background: var(--shadeui-color-slate-100);
+  color: var(--shadeui-fg);
+}
+
+/* ShadeUI capitaliza los labels de botones; en español usamos mayúscula solo al inicio. */
+.capitalize {
+  text-transform: none;
+}
