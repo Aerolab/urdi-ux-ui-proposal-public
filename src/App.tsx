@@ -8,15 +8,6 @@ import { BotMark } from './components/ui'
 import { CurrentPage } from './pages/Pages'
 import { ProtoContext, type ChatMsg, type Page, type Proto, type Role, type UserKind, type View } from './state'
 
-const NOTES = [
-  ['Sidebar del usuario', 'Espacio de trabajo arriba (con cambio de empresa), Buscar ⌘K, Inicio, Tus apps, Store y Grupos. El perfil y sus ajustes viven al pie, no en el Inicio.'],
-  ['Minimizar', 'El botón vive en la fila del logo. Minimizada queda el logo; al pasar el mouse se convierte en "expandir" en el mismo lugar.'],
-  ['Buscador independiente', 'Busca apps y grupos en todo el espacio de trabajo. Si no encuentra nada, ofrece "Preguntarle a Urdi" como salida, no como primera opción.'],
-  ['Inicio para usuario nuevo', 'El asistente toma la pantalla para crear la primera app. El botón flotante del asistente aparece recién cuando el usuario ya tiene apps.'],
-  ['Admin', 'Con rol admin aparece la sección Administración: Apps, Conectores, Permisos y Budget, separada de la navegación personal.'],
-  ['Mobile', 'Misma estructura en una tab bar de 5: Inicio, Tus apps, Store, Grupos y Perfil. Buscar y el asistente van en el header.'],
-]
-
 function Control<T extends string>(props: { label: string; value: T; onChange: (v: T) => void; items: [T, string][] }) {
   return (
     <div className="flex items-center gap-2 text-xs text-fg-muted">
@@ -145,15 +136,6 @@ export default function App() {
               {toastText}
             </div>
           </div>
-        </div>
-
-        <div className="mx-auto mt-4 grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-3">
-          {NOTES.map(([t, p]) => (
-            <div key={t} className="rounded-xl border border-line bg-surface px-3.5 py-3">
-              <b className="mb-1 block">{t}</b>
-              <p className="text-[13px] text-fg-muted">{p}</p>
-            </div>
-          ))}
         </div>
       </div>
     </ProtoContext.Provider>
